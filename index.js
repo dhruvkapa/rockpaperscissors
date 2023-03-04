@@ -20,12 +20,39 @@ function getComputerChoice(){
 }
 
 function playRound(playerSelection, computerSelection){
-
+    if(playerSelection.toLowerCase() == "rock"){
+        if(computerSelection.toLowerCase() == "rock"){
+            console.log("Tie!");
+        } else if (computerSelection.toLowerCase() == "paper"){
+            console.log("Computer wins!");
+        } else if (computerSelection.toLowerCase() == "scissors"){
+            console.log("Player wins!");
+        }
+    } else if (playerSelection.toLowerCase() == "paper"){
+        if(computerSelection.toLowerCase() == "rock"){
+            console.log("Player Wins!");
+        } else if (computerSelection.toLowerCase() == "paper"){
+            console.log("Tie!");
+        } else if (computerSelection.toLowerCase() == "scissors"){
+            console.log("Computer wins!");
+        }
+    } else if(playerSelection.toLowerCase() == "scissors"){
+        if(computerSelection.toLowerCase() == "rock"){
+            console.log("Computer Wins!");
+        } else if (computerSelection.toLowerCase() == "paper"){
+            console.log("Player wins!");
+        } else if (computerSelection.toLowerCase() == "scissors"){
+            console.log("Tie!");
+        }
+    }
 }
 
 
-const playerSelection = "rock";
+const playerSelection = "Rock";
 
 const computerSelection = getComputerChoice();
+
+console.log("Player picks: " + playerSelection);
+console.log("Computer picks: " + computerSelection);
 
 console.log(playRound(playerSelection, computerSelection));
