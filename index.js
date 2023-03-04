@@ -1,12 +1,14 @@
 let max = 3;
 let min = 1;
-let selection = Math.floor((Math.random() * (((max - min) + 1)) + min)) ;
-console.log(selection);
 
 let scorePlayer = 0;
 let scoreComputer = 0;
 let ties = 0;
+
+
 function getComputerChoice(){
+    let selection = Math.floor((Math.random() * (((max - min) + 1)) + min)) ;
+
     if(selection == 1){
         return "Rock";
     } else if (selection == 2){
@@ -58,18 +60,19 @@ function playRound(playerSelection, computerSelection){
 
 
 
+
+
 function game(){
     let computerSelection = getComputerChoice();
     let playerSelection = prompt("Rock, Paper, or Scissors?");
+    
     console.log("Player picks: " + playerSelection);
     console.log("Computer picks: " + computerSelection);
     console.log(playRound(playerSelection, computerSelection));
 }
 
-let i = 0;
-while(i < 5){
+for(i = 0; i < 5; i ++){
     game();
-    i++;
 }
 
 console.log("Player Score: " + scorePlayer + " Computer Score: " + scoreComputer + " Ties: " + ties);
